@@ -21,6 +21,7 @@ export interface ScriptProject {
   id: string
   title: string
   description: string
+  image?: string
   github_url: string
   category?: 'automation' | 'productivity' | 'system' | 'development'
 }
