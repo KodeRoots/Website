@@ -9,14 +9,6 @@ const props = withDefaults(defineProps<Props>(), {
   variant: 'default',
 })
 
-const emit = defineEmits<{
-  click: [event: Event]
-}>()
-
-const handleClick = (event: Event) => {
-  emit('click', event)
-}
-
 const buttonClasses = computed(() => {
   const baseClasses = 'px-5 py-3 font-semibold text-black focus:outline-0'
 
@@ -30,9 +22,9 @@ const buttonClasses = computed(() => {
 </script>
 
 <template>
-  <button :class="buttonClasses" @click="handleClick">
+  <a :class="buttonClasses" target="_blank">
     <span class="relative z-10">
       <slot></slot>
     </span>
-  </button>
+  </a>
 </template>
