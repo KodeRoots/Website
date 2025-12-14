@@ -88,6 +88,7 @@ const utils = [
         :image="application.image"
         :source-code-url="application.sourceCodeUrl"
         :installation-url="application.installationUrl"
+        distributor="flathub"
       />
     </div>
   </div>
@@ -104,6 +105,7 @@ const utils = [
         :image="widget.image"
         :source-code-url="widget.sourceCodeUrl"
         :installation-url="widget.installationUrl"
+        distributor="kde"
       />
     </div>
   </div>

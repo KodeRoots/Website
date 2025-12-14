@@ -9,10 +9,12 @@ interface Props {
   sourceCodeUrl: string
   installationUrl: string
   direction?: 'row' | 'column'
+  distributor?: 'flathub' | 'kde'
 }
 
 withDefaults(defineProps<Props>(), {
   direction: 'row',
+  distributor: undefined,
 })
 </script>
 
@@ -28,8 +30,19 @@ withDefaults(defineProps<Props>(), {
       </p>
 
       <div class="flex gap-4 self-end">
-        <Button variant="underline" :href="sourceCodeUrl">Source Code</Button>
-        <Button :href="installationUrl">Install</Button>
+        <Button variant="underline" :href="sourceCodeUrl">
+          <span class="flex">
+            <icon-simple-icons-github class="mr-1" />
+            Source Code
+          </span>
+        </Button>
+        <Button :href="installationUrl">
+          <span class="flex">
+            <icon-simple-icons-flathub v-if="distributor === 'flathub'" class="mr-1" />
+            <icon-simple-icons-kde v-if="distributor === 'kde'" class="mr-1" />
+            Install
+          </span>
+        </Button>
       </div>
     </div>
   </Card>
