@@ -22,7 +22,7 @@ const buttonClasses = computed(() => {
 </script>
 
 <template>
-  <a :class="buttonClasses" target="_blank">
+  <a :class="buttonClasses" v-bind="$attrs">
     <span class="relative z-10">
       <slot></slot>
     </span>

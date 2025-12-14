@@ -30,13 +30,13 @@ withDefaults(defineProps<Props>(), {
       </p>
 
       <div class="flex gap-4 self-end">
-        <Button variant="underline" :href="sourceCodeUrl">
+        <Button variant="underline" :href="sourceCodeUrl" target="_blank" rel="noopener noreferrer">
           <span class="flex">
             <icon-simple-icons-github class="mr-1" />
             Source Code
           </span>
         </Button>
-        <Button :href="installationUrl">
+        <Button :href="installationUrl" target="_blank" rel="noopener noreferrer">
           <span class="flex">
             <icon-simple-icons-flathub v-if="distributor === 'flathub'" class="mr-1" />
             <icon-simple-icons-kde v-if="distributor === 'kde'" class="mr-1" />
