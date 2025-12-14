@@ -10,8 +10,7 @@ const props = withDefaults(defineProps<Props>(), { direction: 'column' })
 const flexDirection = props.direction === 'row' ? 'flex-row' : 'flex-col'
 
 const cardClasses = computed(
-  () =>
-    `w-150 border-2 border-black bg-white p-4 shadow-[4px_4px_0_0] sm:p-6 gap-4 flex ${flexDirection}`
+  () => `border-2 border-black bg-white p-4 shadow-[4px_4px_0_0] sm:p-6 gap-4 flex ${flexDirection}`
 )
 </script>
 

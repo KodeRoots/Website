@@ -20,7 +20,7 @@ withDefaults(defineProps<Props>(), {
   <Card :direction="direction">
     <img class="border-2 border-black" :src="image" :alt="`${title} image`" />
 
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-1 flex-col gap-4">
       <h3 class="text-xl font-semibold">{{ title }}</h3>
 
       <p class="line-clamp-2 text-pretty -mt-2 flex-1">
