@@ -1,9 +1,7 @@
-<script setup lang="ts">
-console.log("Hello World!");
-</script>
+<script setup lang="ts"></script>
 
 <template>
-    <h1>KodeRoots</h1>
+  <h1>KodeRoots</h1>
 </template>
 
 <style scoped></style>
