@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { NavigationItem } from '@/components/molecules'
 import { FooterSection } from '@/components/organisms'
+import { ThemeToggle } from '@/components/ui/theme-toggle'
 </script>
 
 <template>
@@ -36,12 +37,17 @@ import { FooterSection } from '@/components/organisms'
             />
           </nav>
 
-          <!-- Mobile Navigation Toggle -->
-          <button class="md:hidden p-2">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+          <div class="flex items-center gap-2">
+            <!-- Theme Toggle -->
+            <ThemeToggle />
+
+            <!-- Mobile Navigation Toggle -->
+            <button class="md:hidden p-2">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </header>
