@@ -1,0 +1,6 @@
+export { default as HeroSection } from './HeroSection.vue'
+export { default as FeaturedAppsCarousel } from './FeaturedAppsCarousel.vue'
+export { default as OtherAppsGrid } from './OtherAppsGrid.vue'
+export { default as WidgetsSection } from './WidgetsSection.vue'
+export { default as ScriptsUtilsSection } from './ScriptsUtilsSection.vue'
+export { default as FooterSection } from './FooterSection.vue'
