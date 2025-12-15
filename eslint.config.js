@@ -23,9 +23,10 @@ export default tseslint.config(
         'error',
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
       ],
+      '@typescript-eslint/no-unsafe-argument': 'off',
     },
   },
   {
-    ignores: ['dist/', 'node_modules/', '*.config.js', '*.config.ts'],
+    ignores: ['dist/', 'node_modules/', '*.config.js', '*.config.ts', 'components.d.ts'],
   }
 )

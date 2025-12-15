@@ -17,7 +17,6 @@ declare module 'vue' {
     IconSimpleIconsFlathub: typeof import('~icons/simple-icons/flathub')['default']
     IconSimpleIconsGithub: typeof import('~icons/simple-icons/github')['default']
     IconSimpleIconsKde: typeof import('~icons/simple-icons/kde')['default']
-    IconSimpleIconsVuedotjs: typeof import('~icons/simple-icons/vuedotjs')['default']
     ServiceCard: typeof import('./src/components/molecules/ServiceCard.vue')['default']
   }
 }

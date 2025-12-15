@@ -20,11 +20,13 @@ interface Props {
 const props = defineProps<Props>()
 
 const currentIndex = ref(0)
+const transitionName = ref('slide-next')
 
 const canGoPrevious = computed(() => currentIndex.value > 0)
 const canGoNext = computed(() => currentIndex.value < props.items.length - 1)
 
 const goToPrevious = (): void => {
+  transitionName.value = 'slide-prev'
   if (canGoPrevious.value) {
     currentIndex.value--
   } else {
@@ -33,6 +35,7 @@ const goToPrevious = (): void => {
 }
 
 const goToNext = (): void => {
+  transitionName.value = 'slide-next'
   if (canGoNext.value) {
     currentIndex.value++
   } else {
@@ -41,14 +44,58 @@ const goToNext = (): void => {
 }
 
 const currentItem = computed(() => props.items[currentIndex.value])
+
+const touchStartX = ref(0)
+const touchEndX = ref(0)
+
+const onTouchStart = (e: TouchEvent) => {
+  if (e.changedTouches[0]) {
+    touchStartX.value = e.changedTouches[0].screenX
+  }
+}
+
+const onTouchEnd = (e: TouchEvent) => {
+  if (e.changedTouches[0]) {
+    touchEndX.value = e.changedTouches[0].screenX
+    handleSwipe()
+  }
+}
+
+const onMouseDown = (e: MouseEvent) => {
+  touchStartX.value = e.screenX
+}
+
+const onMouseUp = (e: MouseEvent) => {
+  touchEndX.value = e.screenX
+  handleSwipe()
+}
+
+const handleSwipe = () => {
+  const diff = touchStartX.value - touchEndX.value
+  const threshold = 50
+
+  if (Math.abs(diff) > threshold) {
+    if (diff > 0) {
+      goToNext()
+    } else {
+      goToPrevious()
+    }
+  }
+}
 </script>
 
 <template>
   <div class="flex flex-col gap-4">
-    <div class="relative flex flex-1 items-center">
+    <div
+      class="relative flex flex-1 items-center select-none"
+      @touchstart="onTouchStart"
+      @touchend="onTouchEnd"
+      @mousedown="onMouseDown"
+      @mouseup="onMouseUp"
+    >
       <!-- Carousel Content -->
       <div class="flex-1 overflow-hidden">
-        <transition name="slide" mode="out-in">
+        <transition :name="transitionName" mode="out-in">
           <div :key="currentIndex" class="w-full">
             <slot :item="currentItem" :index="currentIndex"></slot>
           </div>
@@ -56,12 +103,12 @@ const currentItem = computed(() => props.items[currentIndex.value])
       </div>
     </div>
     <div class="flex gap-4">
-      <Button class="flex flex-1 justify-center" @click="goToPrevious" aria-label="Previous slide">
+      <Button class="flex flex-1 justify-center" aria-label="Previous slide" @click="goToPrevious">
         <icon-arrow-back class="h-6 w-6" />
         Previous
       </Button>
 
-      <Button class="flex flex-1 justify-center" @click="goToNext" aria-label="Next slide">
+      <Button class="flex flex-1 justify-center" aria-label="Next slide" @click="goToNext">
         Next
         <icon-arrow-forward class="h-6 w-6" />
       </Button>
@@ -70,18 +117,28 @@ const currentItem = computed(() => props.items[currentIndex.value])
 </template>
 
 <style scoped>
-.slide-enter-active,
-.slide-leave-active {
+.slide-next-enter-active,
+.slide-next-leave-active,
+.slide-prev-enter-active,
+.slide-prev-leave-active {
   transition: all 0.3s ease;
 }
 
-.slide-enter-from {
+.slide-next-enter-from {
   opacity: 0;
   transform: translateX(30px);
 }
-
-.slide-leave-to {
+.slide-next-leave-to {
   opacity: 0;
   transform: translateX(-30px);
+}
+
+.slide-prev-enter-from {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+.slide-prev-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
 }
 </style>

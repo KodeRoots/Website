@@ -78,6 +78,7 @@ const utils = [
     <Carousel :items="applications">
       <template #default="{ item }">
         <ServiceCard
+          v-if="item"
           :title="item.title"
           :description="item.description"
           :image="item.image"
