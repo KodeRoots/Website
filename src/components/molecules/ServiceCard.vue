@@ -12,15 +12,21 @@ interface Props {
   distributor?: 'flathub' | 'kde'
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   direction: 'row',
   distributor: undefined,
 })
+
+const imageSizeClass = props.direction === 'row' ? 'w-50 h-50' : 'w-100 h-100'
 </script>
 
 <template>
   <Card :direction="direction">
-    <img class="border-2 border-black" :src="image" :alt="`${title} image`" />
+    <img
+      :class="`border-2 border-black object-scale-down ${imageSizeClass}`"
+      :src="image"
+      :alt="`${title} image`"
+    />
 
     <div class="flex flex-1 flex-col gap-4">
       <h3 class="text-xl font-semibold">{{ title }}</h3>
@@ -40,7 +46,7 @@ withDefaults(defineProps<Props>(), {
           <span class="flex">
             <icon-simple-icons-flathub v-if="distributor === 'flathub'" class="mr-1" />
             <icon-simple-icons-kde v-if="distributor === 'kde'" class="mr-1" />
-            Install
+            <slot name="install-button"> Install </slot>
           </span>
         </Button>
       </div>

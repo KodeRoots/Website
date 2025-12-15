@@ -5,15 +5,17 @@ const applications = [
   {
     title: 'Kontainer',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    image: 'https://placehold.co/200',
+    image:
+      'https://dl.flathub.org/media/io/github/DenysMb.Kontainer/b73086884e537a82d1e1a64753b0a110/icons/128x128/io.github.DenysMb.Kontainer.png',
     sourceCodeUrl: 'https://github.com/DenysMb/Kontainer',
-    installationUrl: 'https://npmjs.com',
+    installationUrl: 'https://flathub.org/en/apps/io.github.DenysMb.Kontainer',
   },
   {
     title: 'Klaro',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    image: 'https://placehold.co/200',
-    sourceCodeUrl: 'https://github.com/DenysMb/Klaro',
+    image:
+      'https://dl.flathub.org/media/io/github/denysmb.klaro/4792e82f3d21ba53795b31a70d170a2b/icons/128x128/io.github.denysmb.klaro.png',
+    sourceCodeUrl: 'https://flathub.org/en/apps/io.github.denysmb.klaro',
     installationUrl: 'https://npmjs.com',
   },
   {
@@ -122,7 +124,9 @@ const utils = [
         :image="utility.image"
         :source-code-url="utility.sourceCodeUrl"
         :installation-url="utility.installationUrl"
-      />
+      >
+        <template #install-button> Download </template>
+      </ServiceCard>
     </div>
   </div>
 </template>
