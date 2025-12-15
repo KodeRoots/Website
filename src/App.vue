@@ -5,21 +5,23 @@ import Carousel from './components/organisms/Carousel.vue'
 const applications = [
   {
     title: 'Kontainer',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    description:
+      'Graphical user interface (GUI) application built with KDE Kirigami that provides a user-friendly way to manage Distrobox containers.',
     image: 'src/assets/Kontainer.png',
     sourceCodeUrl: 'https://github.com/DenysMb/Kontainer',
     installationUrl: 'https://flathub.org/en/apps/io.github.DenysMb.Kontainer',
   },
   {
     title: 'Klaro',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    description:
+      ' A simple and fast translation app for KDE Plasma that helps you translate text between different languages.',
     image: 'src/assets/Klaro.png',
-    sourceCodeUrl: 'https://flathub.org/en/apps/io.github.denysmb.klaro',
-    installationUrl: 'https://npmjs.com',
+    sourceCodeUrl: 'https://github.com/DenysMb/Klaro',
+    installationUrl: 'https://flathub.org/en/apps/io.github.denysmb.klaro',
   },
   {
     title: 'Unify',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    description: 'Web app aggregator built with Qt 6, Qt WebEngine, and Kirigami.',
     image: 'src/assets/Unify.png',
     sourceCodeUrl: 'https://github.com/DenysMb/Unify',
     installationUrl: 'https://npmjs.com',
@@ -62,19 +64,13 @@ const utils = [
 </script>
 
 <template>
-  <div class="section">
+  <div class="section flex flex-col items-center justify-center">
     <h1 class="text-4xl font-bold">KodeRoots</h1>
 
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt nihil cumque, iste eaque qui
-      asperiores recusandae? Aliquid facere officiis porro, suscipit officia blanditiis quis
-      sapiente reiciendis similique laudantium quia provident?
-    </p>
+    <p>Cultivating open-source software for a powerful and cohesive desktop environment</p>
   </div>
 
   <div class="section">
-    <h2>Highlights</h2>
-
     <Carousel :items="applications">
       <template #default="{ item }">
         <ServiceCard
