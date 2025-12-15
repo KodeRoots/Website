@@ -5,23 +5,21 @@ const applications = [
   {
     title: 'Kontainer',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    image:
-      'https://dl.flathub.org/media/io/github/DenysMb.Kontainer/b73086884e537a82d1e1a64753b0a110/icons/128x128/io.github.DenysMb.Kontainer.png',
+    image: 'src/assets/Kontainer.png',
     sourceCodeUrl: 'https://github.com/DenysMb/Kontainer',
     installationUrl: 'https://flathub.org/en/apps/io.github.DenysMb.Kontainer',
   },
   {
     title: 'Klaro',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    image:
-      'https://dl.flathub.org/media/io/github/denysmb.klaro/4792e82f3d21ba53795b31a70d170a2b/icons/128x128/io.github.denysmb.klaro.png',
+    image: 'src/assets/Klaro.png',
     sourceCodeUrl: 'https://flathub.org/en/apps/io.github.denysmb.klaro',
     installationUrl: 'https://npmjs.com',
   },
   {
     title: 'Unify',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    image: 'https://placehold.co/200',
+    image: 'src/assets/Unify.png',
     sourceCodeUrl: 'https://github.com/DenysMb/Unify',
     installationUrl: 'https://npmjs.com',
   },

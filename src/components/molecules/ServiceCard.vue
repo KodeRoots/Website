@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { toRef } from 'vue'
 import Button from '../atoms/Button.vue'
 import Card from '../atoms/Card.vue'
+import { useImageColor } from '../../composables/useImageColor'
 
 interface Props {
   title: string
@@ -18,15 +20,19 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const imageSizeClass = props.direction === 'row' ? 'w-50 h-50' : 'w-100 h-100'
+
+const { backgroundColor } = useImageColor(toRef(props, 'image'))
 </script>
 
 <template>
   <Card :direction="direction">
-    <img
-      :class="`border-2 border-black object-scale-down ${imageSizeClass}`"
-      :src="image"
-      :alt="`${title} image`"
-    />
+    <div
+      class="flex items-center justify-center border-2 border-black"
+      :class="imageSizeClass"
+      :style="{ backgroundColor }"
+    >
+      <img class="object-scale-down w-full h-full" :src="image" :alt="`${title} image`" />
+    </div>
 
     <div class="flex flex-1 flex-col gap-4">
       <h3 class="text-xl font-semibold">{{ title }}</h3>
