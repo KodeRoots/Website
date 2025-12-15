@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const buttonClasses = computed(() => {
   const baseClasses =
-    'px-5 py-3 font-semibold text-black focus:outline-0 hover:bg-black hover:text-white focus:ring-2 focus:ring-neutral-300'
+    'px-5 py-3 font-semibold text-black focus:outline-0 hover:bg-black hover:text-white focus:ring-2 focus:ring-neutral-300 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-white disabled:hover:text-black'
 
   if (props.variant === 'underline') {
     return `${baseClasses} relative border-black bg-white after:absolute after:inset-x-0 after:bottom-0 after:h-1 after:bg-black hover:after:h-full focus:outline-0`
@@ -24,7 +24,7 @@ const buttonClasses = computed(() => {
 
 <template>
   <a :class="buttonClasses" v-bind="$attrs">
-    <span class="relative z-10">
+    <span class="relative z-10 flex">
       <slot></slot>
     </span>
   </a>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ServiceCard from './components/molecules/ServiceCard.vue'
+import Carousel from './components/organisms/Carousel.vue'
 
 const applications = [
   {
@@ -73,7 +74,20 @@ const utils = [
 
   <div class="section">
     <h2>Highlights</h2>
-    <!-- Carousel with ServiceCards -->
+
+    <Carousel :items="applications">
+      <template #default="{ item }">
+        <ServiceCard
+          :title="item.title"
+          :description="item.description"
+          :image="item.image"
+          :source-code-url="item.sourceCodeUrl"
+          :installation-url="item.installationUrl"
+          :distributor="item.distributor || 'flathub'"
+          direction="column"
+        />
+      </template>
+    </Carousel>
   </div>
 
   <div class="section">

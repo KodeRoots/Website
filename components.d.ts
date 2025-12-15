@@ -13,13 +13,10 @@ declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('./src/components/atoms/Button.vue')['default']
     Card: typeof import('./src/components/atoms/Card.vue')['default']
-    'IconSimpleIcons-[flathub]': typeof import('~icons/simple-icons/[flathub]')['default']
+    Carousel: typeof import('./src/components/organisms/Carousel.vue')['default']
     IconSimpleIconsFlathub: typeof import('~icons/simple-icons/flathub')['default']
     IconSimpleIconsGithub: typeof import('~icons/simple-icons/github')['default']
     IconSimpleIconsKde: typeof import('~icons/simple-icons/kde')['default']
-    IconSimpleIconsLinux: typeof import('~icons/simple-icons/linux')['default']
-    IconSimpleIconsNpm: typeof import('~icons/simple-icons/npm')['default']
-    IconSimpleIconsPwa: typeof import('~icons/simple-icons/pwa')['default']
     IconSimpleIconsVuedotjs: typeof import('~icons/simple-icons/vuedotjs')['default']
     ServiceCard: typeof import('./src/components/molecules/ServiceCard.vue')['default']
   }

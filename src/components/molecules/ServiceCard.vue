@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
   distributor: undefined,
 })
 
-const imageSizeClass = props.direction === 'row' ? 'w-50 h-50' : 'w-100 h-100'
+const imageSizeClass = props.direction === 'row' ? 'w-50 h-50' : 'w-full h-100'
 
 const { backgroundColor } = useImageColor(toRef(props, 'image'))
 </script>
