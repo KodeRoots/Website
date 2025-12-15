@@ -90,7 +90,7 @@ const utils = [
   <div class="section">
     <h2>Applications</h2>
 
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid gap-4 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
       <ServiceCard
         v-for="application in applications"
         :key="application.title"
