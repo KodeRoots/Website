@@ -23,7 +23,7 @@ const buttonClasses = computed(() => {
 </script>
 
 <template>
-  <a :class="buttonClasses" v-bind="$attrs">
+  <a :class="buttonClasses" v-bind="$attrs" target="_blank" rel="noopener noreferrer">
     <span class="relative z-10 flex">
       <slot></slot>
     </span>

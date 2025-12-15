@@ -31,7 +31,12 @@ const { backgroundColor } = useImageColor(toRef(props, 'image'))
       :class="imageSizeClass"
       :style="{ backgroundColor }"
     >
-      <img class="object-scale-down w-full h-full" :src="image" :alt="`${title} image`" />
+      <img
+        class="object-scale-down w-full h-full"
+        :src="image"
+        :alt="`${title} image`"
+        draggable="false"
+      />
     </div>
 
     <div class="flex flex-1 flex-col gap-4">
@@ -42,13 +47,13 @@ const { backgroundColor } = useImageColor(toRef(props, 'image'))
       </p>
 
       <div class="flex gap-4 self-end">
-        <Button variant="underline" :href="sourceCodeUrl" target="_blank" rel="noopener noreferrer">
+        <Button variant="underline" :href="sourceCodeUrl" draggable="false">
           <span class="flex">
             <icon-simple-icons-github class="mr-1" />
             Source Code
           </span>
         </Button>
-        <Button :href="installationUrl" target="_blank" rel="noopener noreferrer">
+        <Button :href="installationUrl" draggable="false">
           <span class="flex">
             <icon-simple-icons-flathub v-if="distributor === 'flathub'" class="mr-1" />
             <icon-simple-icons-kde v-if="distributor === 'kde'" class="mr-1" />
