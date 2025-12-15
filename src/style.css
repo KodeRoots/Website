@@ -28,7 +28,7 @@ h2 {
 }
 
 body {
-  @apply flex p-4;
+  @apply flex;
 }
 
 /*@media (prefers-color-scheme: light) {

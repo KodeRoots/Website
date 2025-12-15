@@ -32,7 +32,7 @@ const { backgroundColor } = useImageColor(toRef(props, 'image'))
       :style="{ backgroundColor }"
     >
       <img
-        class="object-scale-down w-full h-full"
+        class="object-contain p-12 w-full h-full"
         :src="image"
         :alt="`${title} image`"
         draggable="false"
@@ -53,7 +53,7 @@ const { backgroundColor } = useImageColor(toRef(props, 'image'))
             Source Code
           </span>
         </Button>
-        <Button :href="installationUrl" draggable="false">
+        <Button v-if="installationUrl" :href="installationUrl" draggable="false">
           <span class="flex">
             <icon-simple-icons-flathub v-if="distributor === 'flathub'" class="mr-1" />
             <icon-simple-icons-kde v-if="distributor === 'kde'" class="mr-1" />

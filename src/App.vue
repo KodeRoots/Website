@@ -7,7 +7,7 @@ const applications = [
     title: 'Kontainer',
     description:
       'Graphical user interface (GUI) application built with KDE Kirigami that provides a user-friendly way to manage Distrobox containers.',
-    image: 'src/assets/Kontainer.png',
+    image: 'src/assets/Kontainer.svg',
     sourceCodeUrl: 'https://github.com/DenysMb/Kontainer',
     installationUrl: 'https://flathub.org/en/apps/io.github.DenysMb.Kontainer',
   },
@@ -15,14 +15,14 @@ const applications = [
     title: 'Klaro',
     description:
       ' A simple and fast translation app for KDE Plasma that helps you translate text between different languages.',
-    image: 'src/assets/Klaro.png',
+    image: 'src/assets/Klaro.svg',
     sourceCodeUrl: 'https://github.com/DenysMb/Klaro',
     installationUrl: 'https://flathub.org/en/apps/io.github.denysmb.klaro',
   },
   {
     title: 'Unify',
     description: 'Web app aggregator built with Qt 6, Qt WebEngine, and Kirigami.',
-    image: 'src/assets/Unify.png',
+    image: 'src/assets/Unify.svg',
     sourceCodeUrl: 'https://github.com/DenysMb/Unify',
     installationUrl: 'https://npmjs.com',
   },
@@ -30,35 +30,56 @@ const applications = [
 
 const widgets = [
   {
-    title: 'Widget 1',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    image: 'https://placehold.co/200',
-    sourceCodeUrl: 'https://github.com/DenysMb/Widget1',
-    installationUrl: 'https://npmjs.com',
+    title: 'ChatAI',
+    description: 'A range of chatbots as Plasmoid for your KDE Plasma desktop.',
+    image: 'src/assets/ChatAI-Plasmoid.svg',
+    sourceCodeUrl: 'https://github.com/DenysMb/ChatAI-Plasmoid/',
+    installationUrl: 'https://www.pling.com/p/2163340/',
   },
   {
-    title: 'Widget 2',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    image: 'https://placehold.co/200',
-    sourceCodeUrl: 'https://github.com/DenysMb/Widget2',
-    installationUrl: 'https://npmjs.com',
+    title: 'Klaro',
+    description: 'Quick translation applet for KDE Plasma powered by Translate Shell.',
+    image: 'src/assets/Klaro-Plasmoid.svg',
+    sourceCodeUrl: 'https://github.com/DenysMb/Klaro-Plasmoid',
+    installationUrl: 'https://www.pling.com/p/2321269/',
+  },
+  {
+    title: 'ChatQT',
+    description:
+      'ChatQT is an Ollama client where you can quickly chat with all your local models downloaded with Ollama.',
+    image: 'src/assets/ChatQT-Plasmoid.svg',
+    sourceCodeUrl: 'https://github.com/DenysMb/ChatQT-Plasmoid',
+    installationUrl: 'https://www.pling.com/p/2184747/',
+  },
+  {
+    title: 'Kicker-AppsOnly',
+    description:
+      'The original Kicker Dashboard but with only the application list. No favorites and no categories.',
+    image: 'src/assets/Kicker-AppsOnly-Plasmoid.svg',
+    sourceCodeUrl: 'https://github.com/DenysMb/Kicker-AppsOnly',
+    installationUrl: 'https://www.pling.com/p/2145280/',
   },
 ]
 
 const utils = [
   {
-    title: 'Utility 1',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    image: 'https://placehold.co/200',
-    sourceCodeUrl: 'https://github.com/DenysMb/Utility1',
-    installationUrl: 'https://npmjs.com',
+    title: 'TKP - Tile Color Picker',
+    description:
+      'With this script you can set the header/tile color of a window to match with their main window color.',
+    image: 'src/assets/TKP.jpg',
+    sourceCodeUrl: 'https://github.com/DenysMb/TKP-TileColorPicker',
   },
   {
-    title: 'Utility 2',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    image: 'https://placehold.co/200',
-    sourceCodeUrl: 'https://github.com/DenysMb/Utility2',
-    installationUrl: 'https://npmjs.com',
+    title: 'CSG - Color Scheme Generator',
+    description: 'KDE Plasma color scheme generator script.',
+    image: 'src/assets/CSG.jpg',
+    sourceCodeUrl: 'https://github.com/DenysMb/CSG-ColorSchemeGenerator',
+  },
+  {
+    title: 'WCG - Wallpaper Color Scheme Generator',
+    description: 'KDE Plasma color scheme generator script based on your wallpaper.',
+    image: 'src/assets/WCG.jpg',
+    sourceCodeUrl: 'https://github.com/DenysMb/WCG-WallpaperColorSchemeGenerator',
   },
 ]
 </script>
@@ -138,12 +159,35 @@ const utils = [
       </ServiceCard>
     </div>
   </div>
+
+  <footer class="flex flex-col items-center text-center pt-4 pb-8 gap-2">
+    <p class="font-semibold">
+      KodeRoots
+      <br />
+      Cultivating a cohesive desktop environment
+    </p>
+
+    <p>Copyright © {{ new Date().getFullYear() }} - All right reserved</p>
+
+    <div class="flex gap-4 text-xl mt-4">
+      <a href="https://github.com/KodeRoots" target="_blank" rel="noopener noreferrer">
+        <icon-simple-icons-github />
+      </a>
+      <a
+        href="https://flathub.org/en/apps/search?q=DenysMb"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <icon-simple-icons-flathub />
+      </a>
+    </div>
+  </footer>
 </template>
 
 <style scoped>
 @import 'tailwindcss';
 
 .section {
-  @apply flex flex-col gap-4 pb-4;
+  @apply flex flex-col gap-4 p-4;
 }
 </style>
