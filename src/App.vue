@@ -154,6 +154,7 @@ const utils = [
         :image="utility.image"
         :source-code-url="utility.sourceCodeUrl"
         :installation-url="utility.installationUrl"
+        no-image
       >
         <template #install-button> Download </template>
       </ServiceCard>

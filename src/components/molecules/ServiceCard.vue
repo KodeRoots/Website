@@ -12,11 +12,13 @@ interface Props {
   installationUrl: string
   direction?: 'row' | 'column'
   distributor?: 'flathub' | 'kde'
+  noImage?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
   direction: 'row',
   distributor: undefined,
+  noImage: false,
 })
 
 const imageSizeClass = props.direction === 'row' ? 'w-50 h-50 min-w-50 min-h-50' : 'w-full h-100'
@@ -27,6 +29,7 @@ const { backgroundColor } = useImageColor(toRef(props, 'image'))
 <template>
   <Card :direction="direction">
     <div
+      v-if="!noImage"
       class="flex items-center justify-center border-2 border-black"
       :class="imageSizeClass"
       :style="{ backgroundColor }"
