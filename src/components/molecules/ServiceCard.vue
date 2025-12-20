@@ -30,7 +30,7 @@ const { backgroundColor } = useImageColor(toRef(props, 'image'))
   <Card :direction="direction">
     <div
       v-if="!noImage"
-      class="flex items-center justify-center border-2 border-black"
+      class="flex items-center justify-center border-2 border-black dark:border-white"
       :class="imageSizeClass"
       :style="{ backgroundColor }"
     >
