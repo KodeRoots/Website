@@ -1,6 +1,63 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 import ServiceCard from './components/molecules/ServiceCard.vue'
 import Carousel from './components/organisms/Carousel.vue'
+
+const isDarkMode = ref(false)
+
+const updateDarkMode = () => {
+  isDarkMode.value = window.matchMedia('(prefers-color-scheme: dark)').matches
+}
+
+onMounted(() => {
+  updateDarkMode()
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateDarkMode)
+})
+
+onUnmounted(() => {
+  window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', updateDarkMode)
+})
+
+const widgets = computed(() => [
+  {
+    title: 'ChatAI',
+    description: 'A range of chatbots as Plasmoid for your KDE Plasma desktop.',
+    image: isDarkMode.value
+      ? 'src/assets/ChatAI-Plasmoid-Light.svg'
+      : 'src/assets/ChatAI-Plasmoid.svg',
+    sourceCodeUrl: 'https://github.com/DenysMb/ChatAI-Plasmoid/',
+    installationUrl: 'https://www.pling.com/p/2163340/',
+  },
+  {
+    title: 'Klaro',
+    description: 'Quick translation applet for KDE Plasma powered by Translate Shell.',
+    image: isDarkMode.value
+      ? 'src/assets/Klaro-Plasmoid-Light.svg'
+      : 'src/assets/Klaro-Plasmoid.svg',
+    sourceCodeUrl: 'https://github.com/DenysMb/Klaro-Plasmoid',
+    installationUrl: 'https://www.pling.com/p/2321269/',
+  },
+  {
+    title: 'ChatQT',
+    description:
+      'ChatQT is an Ollama client where you can quickly chat with all your local models downloaded with Ollama.',
+    image: isDarkMode.value
+      ? 'src/assets/ChatQT-Plasmoid-Light.svg'
+      : 'src/assets/ChatQT-Plasmoid.svg',
+    sourceCodeUrl: 'https://github.com/DenysMb/ChatQT-Plasmoid',
+    installationUrl: 'https://www.pling.com/p/2184747/',
+  },
+  {
+    title: 'Kicker-AppsOnly',
+    description:
+      'The original Kicker Dashboard but with only the application list. No favorites and no categories.',
+    image: isDarkMode.value
+      ? 'src/assets/Kicker-AppsOnly-Plasmoid-Light.svg'
+      : 'src/assets/Kicker-AppsOnly-Plasmoid.svg',
+    sourceCodeUrl: 'https://github.com/DenysMb/Kicker-AppsOnly',
+    installationUrl: 'https://www.pling.com/p/2145280/',
+  },
+])
 
 const applications = [
   {
@@ -24,40 +81,7 @@ const applications = [
     description: 'Web app aggregator built with Qt 6, Qt WebEngine, and Kirigami.',
     image: 'src/assets/Unify.svg',
     sourceCodeUrl: 'https://github.com/DenysMb/Unify',
-    installationUrl: 'https://npmjs.com',
-  },
-]
-
-const widgets = [
-  {
-    title: 'ChatAI',
-    description: 'A range of chatbots as Plasmoid for your KDE Plasma desktop.',
-    image: 'src/assets/ChatAI-Plasmoid.svg',
-    sourceCodeUrl: 'https://github.com/DenysMb/ChatAI-Plasmoid/',
-    installationUrl: 'https://www.pling.com/p/2163340/',
-  },
-  {
-    title: 'Klaro',
-    description: 'Quick translation applet for KDE Plasma powered by Translate Shell.',
-    image: 'src/assets/Klaro-Plasmoid.svg',
-    sourceCodeUrl: 'https://github.com/DenysMb/Klaro-Plasmoid',
-    installationUrl: 'https://www.pling.com/p/2321269/',
-  },
-  {
-    title: 'ChatQT',
-    description:
-      'ChatQT is an Ollama client where you can quickly chat with all your local models downloaded with Ollama.',
-    image: 'src/assets/ChatQT-Plasmoid.svg',
-    sourceCodeUrl: 'https://github.com/DenysMb/ChatQT-Plasmoid',
-    installationUrl: 'https://www.pling.com/p/2184747/',
-  },
-  {
-    title: 'Kicker-AppsOnly',
-    description:
-      'The original Kicker Dashboard but with only the application list. No favorites and no categories.',
-    image: 'src/assets/Kicker-AppsOnly-Plasmoid.svg',
-    sourceCodeUrl: 'https://github.com/DenysMb/Kicker-AppsOnly',
-    installationUrl: 'https://www.pling.com/p/2145280/',
+    installationUrl: 'https://flathub.org/en/apps/io.github.denysmb.unify',
   },
 ]
 
@@ -83,7 +107,6 @@ const utils = [
   },
 ]
 </script>
-
 <template>
   <div class="section flex flex-col items-center justify-center">
     <h1 class="text-4xl font-bold">KodeRoots</h1>
@@ -131,7 +154,7 @@ const utils = [
     <div class="grid grid-cols-2 gap-4">
       <ServiceCard
         v-for="widget in widgets"
-        :key="widget.title"
+        :key="`${widget.title}-${isDarkMode ? 'dark' : 'light'}`"
         :title="widget.title"
         :description="widget.description"
         :image="widget.image"
