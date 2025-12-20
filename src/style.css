@@ -34,6 +34,6 @@ body {
 @media (prefers-color-scheme: dark) {
   :root {
     color: #ffffff;
-    background-color: #000000;
+    background-color: oklch(21% 0.006 285.885);
   }
 }
