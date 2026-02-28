@@ -23,8 +23,8 @@ const widgets = computed(() => [
     title: 'ChatAI',
     description: 'A range of chatbots as Plasmoid for your KDE Plasma desktop.',
     image: isDarkMode.value
-      ? 'src/assets/ChatAI-Plasmoid-Light.svg'
-      : 'src/assets/ChatAI-Plasmoid.svg',
+      ? new URL('./assets/ChatAI-Plasmoid-Light.svg', import.meta.url).href
+      : new URL('./assets/ChatAI-Plasmoid.svg', import.meta.url).href,
     sourceCodeUrl: 'https://github.com/DenysMb/ChatAI-Plasmoid/',
     installationUrl: 'https://www.pling.com/p/2163340/',
   },
@@ -32,8 +32,8 @@ const widgets = computed(() => [
     title: 'Klaro',
     description: 'Quick translation applet for KDE Plasma powered by Translate Shell.',
     image: isDarkMode.value
-      ? 'src/assets/Klaro-Plasmoid-Light.svg'
-      : 'src/assets/Klaro-Plasmoid.svg',
+      ? new URL('./assets/Klaro-Plasmoid-Light.svg', import.meta.url).href
+      : new URL('./assets/Klaro-Plasmoid.svg', import.meta.url).href,
     sourceCodeUrl: 'https://github.com/DenysMb/Klaro-Plasmoid',
     installationUrl: 'https://www.pling.com/p/2321269/',
   },
@@ -42,8 +42,8 @@ const widgets = computed(() => [
     description:
       'ChatQT is an Ollama client where you can quickly chat with all your local models downloaded with Ollama.',
     image: isDarkMode.value
-      ? 'src/assets/ChatQT-Plasmoid-Light.svg'
-      : 'src/assets/ChatQT-Plasmoid.svg',
+      ? new URL('./assets/ChatQT-Plasmoid-Light.svg', import.meta.url).href
+      : new URL('./assets/ChatQT-Plasmoid.svg', import.meta.url).href,
     sourceCodeUrl: 'https://github.com/DenysMb/ChatQT-Plasmoid',
     installationUrl: 'https://www.pling.com/p/2184747/',
   },
@@ -52,8 +52,8 @@ const widgets = computed(() => [
     description:
       'The original Kicker Dashboard but with only the application list. No favorites and no categories.',
     image: isDarkMode.value
-      ? 'src/assets/Kicker-AppsOnly-Plasmoid-Light.svg'
-      : 'src/assets/Kicker-AppsOnly-Plasmoid.svg',
+      ? new URL('./assets/Kicker-AppsOnly-Plasmoid-Light.svg', import.meta.url).href
+      : new URL('./assets/Kicker-AppsOnly-Plasmoid.svg', import.meta.url).href,
     sourceCodeUrl: 'https://github.com/DenysMb/Kicker-AppsOnly',
     installationUrl: 'https://www.pling.com/p/2145280/',
   },
@@ -64,7 +64,7 @@ const applications = [
     title: 'Kontainer',
     description:
       'A native KDE application that provides a user-friendly graphical interface for managing Distrobox containers.',
-    image: 'src/assets/Kontainer.svg',
+    image: new URL('./assets/Kontainer.svg', import.meta.url).href,
     sourceCodeUrl: 'https://invent.kde.org/denysmb/Kontainer',
     installationUrl: 'https://flathub.org/en/apps/io.github.DenysMb.Kontainer',
   },
@@ -72,7 +72,7 @@ const applications = [
     title: 'Klaro',
     description:
       'A native KDE application that provides quick and easy text translation with a simple and intuitive interface.',
-    image: 'src/assets/Klaro.svg',
+    image: new URL('./assets/Klaro.svg', import.meta.url).href,
     sourceCodeUrl: 'https://invent.kde.org/denysmb/Klaro',
     installationUrl: 'https://flathub.org/en/apps/io.github.denysmb.klaro',
   },
@@ -80,7 +80,7 @@ const applications = [
     title: 'Unify',
     description:
       'A native KDE application that brings your favorite web services to the desktop with seamless integration.',
-    image: 'src/assets/Unify.svg',
+    image: new URL('./assets/Unify.svg', import.meta.url).href,
     sourceCodeUrl: 'https://invent.kde.org/denysmb/Unify',
     installationUrl: 'https://flathub.org/en/apps/io.github.denysmb.unify',
   },
@@ -88,7 +88,7 @@ const applications = [
     title: 'Diktate',
     description:
       "A native KDE application that provides accurate speech-to-text transcription using OpenAI's Whisper AI model.",
-    image: 'src/assets/Diktate.svg',
+    image: new URL('./assets/Diktate.svg', import.meta.url).href,
     sourceCodeUrl: 'https://invent.kde.org/denysmb/Diktate',
     installationUrl: '',
   },
@@ -96,7 +96,7 @@ const applications = [
     title: 'Musik',
     description:
       'A native KDE application that provides a simple and intuitive audio playback experience.',
-    image: 'src/assets/Musik.svg',
+    image: new URL('./assets/Musik.svg', import.meta.url).href,
     sourceCodeUrl: 'https://invent.kde.org/denysmb/Musik',
     installationUrl: '',
   },
@@ -104,7 +104,7 @@ const applications = [
     title: 'TimeTracker',
     description:
       'A native KDE application that provides a simple and intuitive way to track time spent on tasks and projects.',
-    image: 'src/assets/TimeTracker.svg',
+    image: new URL('./assets/TimeTracker.svg', import.meta.url).href,
     sourceCodeUrl: 'https://invent.kde.org/denysmb/TimeTracker',
     installationUrl: '',
   },
@@ -115,21 +115,21 @@ const utils = [
     title: 'TKP - Tile Color Picker',
     description:
       'With this script you can set the header/tile color of a window to match with their main window color.',
-    image: 'src/assets/TKP.jpg',
+    image: new URL('./assets/TKP.jpg', import.meta.url).href,
     sourceCodeUrl: 'https://github.com/DenysMb/TKP-TileColorPicker',
     installationUrl: '',
   },
   {
     title: 'CSG - Color Scheme Generator',
     description: 'KDE Plasma color scheme generator script.',
-    image: 'src/assets/CSG.jpg',
+    image: new URL('./assets/CSG.jpg', import.meta.url).href,
     sourceCodeUrl: 'https://github.com/DenysMb/CSG-ColorSchemeGenerator',
     installationUrl: '',
   },
   {
     title: 'WCG - Wallpaper Color Scheme Generator',
     description: 'KDE Plasma color scheme generator script based on your wallpaper.',
-    image: 'src/assets/WCG.jpg',
+    image: new URL('./assets/WCG.jpg', import.meta.url).href,
     sourceCodeUrl: 'https://github.com/DenysMb/WCG-WallpaperColorSchemeGenerator',
     installationUrl: '',
   },
