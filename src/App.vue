@@ -117,18 +117,21 @@ const utils = [
       'With this script you can set the header/tile color of a window to match with their main window color.',
     image: 'src/assets/TKP.jpg',
     sourceCodeUrl: 'https://github.com/DenysMb/TKP-TileColorPicker',
+    installationUrl: '',
   },
   {
     title: 'CSG - Color Scheme Generator',
     description: 'KDE Plasma color scheme generator script.',
     image: 'src/assets/CSG.jpg',
     sourceCodeUrl: 'https://github.com/DenysMb/CSG-ColorSchemeGenerator',
+    installationUrl: '',
   },
   {
     title: 'WCG - Wallpaper Color Scheme Generator',
     description: 'KDE Plasma color scheme generator script based on your wallpaper.',
     image: 'src/assets/WCG.jpg',
     sourceCodeUrl: 'https://github.com/DenysMb/WCG-WallpaperColorSchemeGenerator',
+    installationUrl: '',
   },
 ]
 </script>
@@ -201,7 +204,7 @@ const utils = [
         :description="utility.description"
         :image="utility.image"
         :source-code-url="utility.sourceCodeUrl"
-        :installation-url="utility.installationUrl"
+        :installation-url="utility.installationUrl || ''"
         no-image
       >
         <template #install-button> Download </template>
