@@ -16,6 +16,7 @@ declare module 'vue' {
     Carousel: typeof import('./src/components/organisms/Carousel.vue')['default']
     IconSimpleIconsFlathub: typeof import('~icons/simple-icons/flathub')['default']
     IconSimpleIconsGithub: typeof import('~icons/simple-icons/github')['default']
+    IconSimpleIconsGitlab: typeof import('~icons/simple-icons/gitlab')['default']
     IconSimpleIconsKde: typeof import('~icons/simple-icons/kde')['default']
     ServiceCard: typeof import('./src/components/molecules/ServiceCard.vue')['default']
   }

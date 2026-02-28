@@ -63,25 +63,50 @@ const applications = [
   {
     title: 'Kontainer',
     description:
-      'Graphical user interface (GUI) application built with KDE Kirigami that provides a user-friendly way to manage Distrobox containers.',
+      'A native KDE application that provides a user-friendly graphical interface for managing Distrobox containers.',
     image: 'src/assets/Kontainer.svg',
-    sourceCodeUrl: 'https://github.com/DenysMb/Kontainer',
+    sourceCodeUrl: 'https://invent.kde.org/denysmb/Kontainer',
     installationUrl: 'https://flathub.org/en/apps/io.github.DenysMb.Kontainer',
   },
   {
     title: 'Klaro',
     description:
-      ' A simple and fast translation app for KDE Plasma that helps you translate text between different languages.',
+      'A native KDE application that provides quick and easy text translation with a simple and intuitive interface.',
     image: 'src/assets/Klaro.svg',
-    sourceCodeUrl: 'https://github.com/DenysMb/Klaro',
+    sourceCodeUrl: 'https://invent.kde.org/denysmb/Klaro',
     installationUrl: 'https://flathub.org/en/apps/io.github.denysmb.klaro',
   },
   {
     title: 'Unify',
-    description: 'Web app aggregator built with Qt 6, Qt WebEngine, and Kirigami.',
+    description:
+      'A native KDE application that brings your favorite web services to the desktop with seamless integration.',
     image: 'src/assets/Unify.svg',
-    sourceCodeUrl: 'https://github.com/DenysMb/Unify',
+    sourceCodeUrl: 'https://invent.kde.org/denysmb/Unify',
     installationUrl: 'https://flathub.org/en/apps/io.github.denysmb.unify',
+  },
+  {
+    title: 'Diktate',
+    description:
+      "A native KDE application that provides accurate speech-to-text transcription using OpenAI's Whisper AI model.",
+    image: 'src/assets/Diktate.svg',
+    sourceCodeUrl: 'https://invent.kde.org/denysmb/Diktate',
+    installationUrl: '',
+  },
+  {
+    title: 'Musik',
+    description:
+      'A native KDE application that provides a simple and intuitive audio playback experience.',
+    image: 'src/assets/Musik.svg',
+    sourceCodeUrl: 'https://invent.kde.org/denysmb/Musik',
+    installationUrl: '',
+  },
+  {
+    title: 'TimeTracker',
+    description:
+      'A native KDE application that provides a simple and intuitive way to track time spent on tasks and projects.',
+    image: 'src/assets/TimeTracker.svg',
+    sourceCodeUrl: 'https://invent.kde.org/denysmb/TimeTracker',
+    installationUrl: '',
   },
 ]
 
@@ -194,8 +219,8 @@ const utils = [
     <p>Copyright © {{ new Date().getFullYear() }} - All right reserved</p>
 
     <div class="flex gap-4 text-xl mt-4">
-      <a href="https://github.com/KodeRoots" target="_blank" rel="noopener noreferrer">
-        <icon-simple-icons-github />
+      <a href="https://invent.kde.org/denysmb" target="_blank" rel="noopener noreferrer">
+        <icon-simple-icons-gitlab />
       </a>
       <a
         href="https://flathub.org/en/apps/search?q=DenysMb"
